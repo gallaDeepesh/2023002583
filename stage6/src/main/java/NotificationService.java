@@ -1,10 +1,11 @@
+import javax.management.Notification;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class NotificationService {
 
-    public static double calculateScore(Notification n) {
+    public static double calculateScore(UserNotification n) {
 
         int weight = 0;
 

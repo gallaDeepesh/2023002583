@@ -10,7 +10,7 @@ import java.util.List;
 public class Main {
 
     private static final String TOKEN =
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJkZ2FsbGFAZ2l0YW0uaW4iLCJleHAiOjE3ODA4MTc3NzUsImlhdCI6MTc4MDgxNjg3NSwiaXNzIjoiQWZmb3JkIE1lZGljYWwgVGVjaG5vbG9naWVzIFByaXZhdGUgTGltaXRlZCIsImp0aSI6ImJhMTYxYWIwLTYwNTctNGM2Yi1iMDJmLWU3YjhjMGYwZWFlYyIsImxvY2FsZSI6ImVuLUlOIiwibmFtZSI6ImdhbGxhIGRlZXBlc2giLCJzdWIiOiJkZjNjODYxYy03OTRjLTQzNjgtOWJmNS02ZGJiMjM0ZGMyOWUifSwiZW1haWwiOiJkZ2FsbGFAZ2l0YW0uaW4iLCJuYW1lIjoiZ2FsbGEgZGVlcGVzaCIsInJvbGxObyI6IjIwMjMwMDI1ODMiLCJhY2Nlc3NDb2RlIjoid2dLdGdaIiwiY2xpZW50SUQiOiJkZjNjODYxYy03OTRjLTQzNjgtOWJmNS02ZGJiMjM0ZGMyOWUiLCJjbGllbnRTZWNyZXQiOiJRUFp0ZUdWekhNakpWZFpNIn0.EdLou55FvzJud1kdu_S_7H_UVRy5a-CepC8a9jpcuQc";
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJkZ2FsbGFAZ2l0YW0uaW4iLCJleHAiOjE3ODA4MjA0MzUsImlhdCI6MTc4MDgxOTUzNSwiaXNzIjoiQWZmb3JkIE1lZGljYWwgVGVjaG5vbG9naWVzIFByaXZhdGUgTGltaXRlZCIsImp0aSI6ImY4NzA3NzdlLTExZWUtNGE0YS04ODQwLTMwZmM1NjUwNTVkNSIsImxvY2FsZSI6ImVuLUlOIiwibmFtZSI6ImdhbGxhIGRlZXBlc2giLCJzdWIiOiJkZjNjODYxYy03OTRjLTQzNjgtOWJmNS02ZGJiMjM0ZGMyOWUifSwiZW1haWwiOiJkZ2FsbGFAZ2l0YW0uaW4iLCJuYW1lIjoiZ2FsbGEgZGVlcGVzaCIsInJvbGxObyI6IjIwMjMwMDI1ODMiLCJhY2Nlc3NDb2RlIjoid2dLdGdaIiwiY2xpZW50SUQiOiJkZjNjODYxYy03OTRjLTQzNjgtOWJmNS02ZGJiMjM0ZGMyOWUiLCJjbGllbnRTZWNyZXQiOiJRUFp0ZUdWekhNakpWZFpNIn0.20DMiZ8b_roPvBwu1dTl8rSS9pE4z3Baz3mCfl64jYI";
 
     public static void main(String[] args)
             throws Exception {
@@ -54,10 +54,10 @@ public class Main {
                         NotificationResponse.class
                 );
 
-        List<Notification> notifications =
+        List<UserNotification> notifications =
                 result.getNotifications();
 
-        for (Notification n : notifications) {
+        for (UserNotification n : notifications) {
 
             n.setScore(
                     NotificationService
@@ -67,7 +67,7 @@ public class Main {
 
         notifications.sort(
                 Comparator.comparingDouble(
-                        Notification::getScore
+                        UserNotification::getScore
                 ).reversed()
         );
 
@@ -80,7 +80,7 @@ public class Main {
                      notifications.size());
              i++) {
 
-            Notification n =
+            UserNotification n =
                     notifications.get(i);
 
             System.out.println(

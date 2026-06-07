@@ -340,3 +340,18 @@ Benefits:
 
 ```
 ```
+## Stage 6
+
+Priority is calculated using both notification type and recency.
+
+Weights used:
+
+- Placement = 300
+- Result = 200
+- Event = 100
+
+A recency bonus is added so newer notifications appear before older notifications of the same type.
+
+The current implementation sorts all notifications and selects the first 10.
+
+For large-scale systems, a min-heap (PriorityQueue) of size 10 can be maintained. This allows processing incoming notifications in O(n log 10) time while always keeping only the top 10 highest-priority notifications in memory.
