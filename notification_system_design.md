@@ -355,3 +355,6 @@ A recency bonus is added so newer notifications appear before older notification
 The current implementation sorts all notifications and selects the first 10.
 
 For large-scale systems, a min-heap (PriorityQueue) of size 10 can be maintained. This allows processing incoming notifications in O(n log 10) time while always keeping only the top 10 highest-priority notifications in memory.
+
+<img width="1128" height="597" alt="image" src="https://github.com/user-attachments/assets/3bb346bc-201a-4b82-8073-0831e86da7cd" />
+
